@@ -1,6 +1,5 @@
 ! settings 
 URxvt.scrollBar: false
-URxvt.internalBorder: 10
 URxvt.cursorBlink: 1
 URxvt.cursorLine: 1
 URxvt.termName: rxvt-unicode

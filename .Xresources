@@ -17,6 +17,14 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
+! Links
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.keysym.M-u: perl:url-select:select_next
+! URxvt.url-select.underline: true
+
+
 ! locale
 URxvt.locale:	utf8
 URxvt.imLocale:	en_AU.UTF-8
@@ -44,7 +52,7 @@ URxvt.depth: 32
 #define base0F #ab7967
 
 *foreground:   base05
-*background:   [85]base00
+*background:   base00
 *cursorColor:  base05
 
 *color0:       base00

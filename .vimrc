@@ -1,3 +1,5 @@
+set shell=/bin/bash
+
 " Vundle
 set nocompatible             
 filetype off                  
@@ -10,6 +12,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Bundle 'hsanson/vim-android'
+Plugin 'vim-scripts/L9'
+Plugin 'vim-scripts/FuzzyFinder'
 
 call vundle#end()            
 filetype plugin indent on   

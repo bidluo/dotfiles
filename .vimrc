@@ -1,8 +1,8 @@
 set shell=/bin/bash
 
 " Vundle
-set nocompatible             
-filetype off                  
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -15,9 +15,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Bundle 'hsanson/vim-android'
 Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/FuzzyFinder'
+Plugin 'bronson/vim-trailing-whitespace'
 
-call vundle#end()            
-filetype plugin indent on   
+call vundle#end()
+filetype plugin indent on
 
 " Everything Else
 syntax on

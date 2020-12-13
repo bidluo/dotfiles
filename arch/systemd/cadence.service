@@ -1,0 +1,8 @@
+[Unit]
+Description=Cadence
+
+[Service]
+ExecStart=cadence-session-start --system-start
+
+[Install]
+WantedBy=default.target

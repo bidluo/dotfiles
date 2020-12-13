@@ -1,0 +1,7 @@
+{
+  "shared/tmux.conf": "~/.tmux.conf",
+  "shared/config/fish": "~/.config/fish",
+  "shared/config/functions": "~/.config/functions",
+  "shared/config/nvim": "~/.config/nvim",
+  "shared/config/omf": "~/.config/omf"
+}

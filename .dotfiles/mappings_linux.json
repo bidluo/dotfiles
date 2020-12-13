@@ -1,0 +1,7 @@
+{
+  "arch/i3": "~/.config/i3",
+  "arch/picom.conf": "~/.config/picom.conf",
+  "arch/systemd/jack-matchmaker.service": "~/.config/systemd/user/jack-matchmaker.service",
+  "arch/systemd/discord.service": "~/.config/systemd/user/discord.service",
+  "arch/systemd/cadence.service": "~/.config/systemd/user/cadence.service"
+}

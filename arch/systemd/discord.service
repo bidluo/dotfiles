@@ -1,0 +1,8 @@
+[Unit]
+Description=Discord
+
+[Service]
+ExecStart=apulse discord
+
+[Install]
+WantedBy=default.target

@@ -1,4 +1,1 @@
-.config/coc
-.config/nvim/plugged
-
-.config/ag
+**/nvim/plugged

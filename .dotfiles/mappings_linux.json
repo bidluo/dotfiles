@@ -3,5 +3,7 @@
   "arch/picom.conf": "~/.config/picom.conf",
   "arch/systemd/jack-matchmaker.service": "~/.config/systemd/user/jack-matchmaker.service",
   "arch/systemd/discord.service": "~/.config/systemd/user/discord.service",
-  "arch/systemd/cadence.service": "~/.config/systemd/user/cadence.service"
+  "arch/systemd/cadence.service": "~/.config/systemd/user/cadence.service",
+  "arch/systemd/synergy.service": "~/.config/systemd/user/synergy.service",
+  "arch/Xresources": "~/.Xresources"
 }

@@ -2,7 +2,8 @@
 set $mod Mod4
 
 #Wallpaper
-exec --no-startup-id feh --bg-scale '~/dotfiles/arch/images/wallpaper.jpg'
+exec --no-startup-id feh --bg-scale ~/dotfiles/arch/images/wallpaper.jpg
+exec --nostartup-id setxkbmap -option altwin:swap_alt_win
 
 #i3-Gaps specific
 for_window [class="^.*"] border pixel 2 

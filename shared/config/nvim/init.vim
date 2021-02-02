@@ -63,7 +63,6 @@ let g:NERDTreeIgnore = ['^build$', '^node_modules$']
 
 let g:coc_global_extensions = [
             \ 'coc-json', 
-            \ 'coc-solargraph'
             \ ]
 
 " COC

@@ -8,6 +8,7 @@ Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -40,11 +41,6 @@ noremap <Leader>m :set invnumber<CR>
 noremap <Leader>O :OR<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gds :Gdiffsplit<CR>
-
-nnoremap <Leader>h <C-W>h
-nnoremap <Leader>j <C-W>j
-nnoremap <Leader>k <C-W>k
-nnoremap <Leader>l <C-W>l
 
 noremap <Leader>ce :e $MYVIMRC<CR>
 noremap <Leader>cr :source $MYVIMRC<CR>

@@ -1,0 +1,11 @@
+[Unit]
+Description=Streamdeck
+After=graphical.target
+
+[Service]
+ExecStart=/usr/bin/streamdeckd -config /home/david/.config/streamdeck-config.json
+#ExecStartPre=/bin/sleep 30
+
+[Install]
+WantedBy=default.target
+

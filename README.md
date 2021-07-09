@@ -7,3 +7,5 @@
 - Run Vundle
 - Install ag (for CtrlP)
 
+
+https://github.com/rhysd/dotfiles

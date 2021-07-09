@@ -1,5 +1,8 @@
 thefuck --alias | source
 set fish_greeting
+fish_ssh_agent
+
+set PATH ~/.local/bin $PATH
 
 # Start X at login
 if status is-login

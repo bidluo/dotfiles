@@ -1,0 +1,11 @@
+[Unit]
+Description=Barrier
+After=graphical.target
+
+[Service]
+ExecStart=/usr/bin/barrier -f --no-tray --debug INFO --name archlinux -c /home/david/barrier.conf --address :24801
+ExecStartPre=/bin/sleep 30
+
+[Install]
+WantedBy=default.target
+

@@ -1,0 +1,9 @@
+[Unit]
+Description=vrwa Service
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/bash -c 'echo device_specific > /sys/bus/pci/devices/0000:0d:00.0/reset_method'
+
+[Install]
+WantedBy=multi-user.target

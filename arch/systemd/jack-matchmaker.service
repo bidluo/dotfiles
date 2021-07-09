@@ -1,8 +1,0 @@
-[Unit]
-Description=Jack MatchMaker
-
-[Service]
-ExecStart=jack-matchmaker -p /home/david/dotfiles/arch/audio/jack-matchmaker
-
-[Install]
-WantedBy=default.target

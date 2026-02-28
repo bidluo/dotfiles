@@ -1,12 +1,7 @@
-thefuck --alias | source
 set fish_greeting
 fish_ssh_agent
 
 set PATH ~/.local/bin $PATH
+set -gx PATH /sbin /usr/sbin ~/.local/bin $PATH
 
-# Start X at login
-if status is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec startx -- -keeptty
-    end
-end
+/Users/david/.local/bin/mise activate fish | source

@@ -1,0 +1,40 @@
+# Nocturne — user matugen templates.
+#
+# DMS runs these alongside its own templates on every wallpaper/theme change
+# (dms matugen generate --run-user-templates, default on). Same palette, so
+# these stay in lockstep with kitty/vesktop/gtk/qt which DMS themes natively.
+#
+# matugen requires absolute paths here (no ~).
+
+[config]
+
+# Hyprland border — keeps David's two-stop gradient, sourced from the palette.
+[templates.nocturne_hypr]
+input_path = '/home/david/.config/matugen/templates/hypr-colors.lua'
+output_path = '/home/david/.config/hypr/colors.lua'
+
+# Neovim — base16 table for the hand-built config (mini.base16).
+[templates.nocturne_nvim]
+input_path = '/home/david/.config/matugen/templates/nvim-base16.lua'
+output_path = '/home/david/.config/nvim/lua/nocturne/generated.lua'
+
+# Fish — syntax colors.
+[templates.nocturne_fish]
+input_path = '/home/david/.config/matugen/templates/fish-colors.fish'
+output_path = '/home/david/.config/fish/conf.d/nocturne-colors.fish'
+
+# btop — theme.
+[templates.nocturne_btop]
+input_path = '/home/david/.config/matugen/templates/btop-nocturne.theme'
+output_path = '/home/david/.config/btop/themes/nocturne.theme'
+
+# Spotify (spicetify) — color scheme for the Nocturne theme.
+[templates.nocturne_spicetify]
+input_path = '/home/david/.config/matugen/templates/spicetify-color.ini'
+output_path = '/home/david/.config/spicetify/Themes/Nocturne/color.ini'
+
+# Firefox chrome — userChrome.css for the active profile (this box stores the
+# profile under ~/.config/mozilla, not ~/.mozilla).
+[templates.nocturne_firefox]
+input_path = '/home/david/.config/matugen/templates/firefox-userchrome.css'
+output_path = '/home/david/.config/mozilla/firefox/0xzmbkae.default-release/chrome/userChrome.css'

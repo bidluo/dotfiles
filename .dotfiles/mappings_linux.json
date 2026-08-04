@@ -1,9 +1,0 @@
-{
-  "arch/i3": "~/.config/i3",
-  "arch/picom.conf": "~/.config/picom.conf",
-  "arch/systemd/discord.service": "~/.config/systemd/user/discord.service",
-  "arch/systemd/barrier.service": "~/.config/systemd/user/barrier.service",
-  "arch/systemd/streamdeck.service": "~/.config/systemd/user/streamdeck.service",
-  "arch/systemd/ssh-agent.service": "~/.config/systemd/user/ssh-agent.service",
-  "arch/Xresources": "~/.Xresources"
-}

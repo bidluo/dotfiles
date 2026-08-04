@@ -1,0 +1,59 @@
+[user]
+	name = David Liaw
+	email = david@liaw.me
+
+[init]
+	defaultBranch = main
+
+[core]
+	pager = delta
+	editor = nvim
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true              # n/N to move between diff sections
+	line-numbers = true
+	side-by-side = false
+	hyperlinks = true
+	# base16-256 follows the terminal's 16 ANSI colors → tracks the matugen theme
+	syntax-theme = base16-256
+	line-numbers-minus-style = "#ff6b6b"
+	line-numbers-plus-style = "#00ff99"
+	file-style = bold "#33ccff"
+	file-decoration-style = "#33ccff" ul
+	hunk-header-decoration-style = "#4a515e" box
+
+[merge]
+	conflictstyle = zdiff3
+
+[diff]
+	colorMoved = default
+	algorithm = histogram
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[fetch]
+	prune = true
+
+[rebase]
+	autoStash = true
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[alias]
+	s = status -sb
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) %C(dim white)%an%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset)%n  %C(white)%s%C(reset)'
+	last = log -1 HEAD --stat
+	unstage = restore --staged
+	amend = commit --amend --no-edit

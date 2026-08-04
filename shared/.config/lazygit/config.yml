@@ -1,0 +1,30 @@
+# Nocturne lazygit config. Theme uses ANSI colour names so it tracks the
+# terminal's matugen palette; delta is the diff pager (matches git).
+gui:
+  nerdFontsVersion: "3"
+  showFileTree: true
+  showRandomTip: false
+  border: "rounded"
+  theme:
+    activeBorderColor:
+      - cyan
+      - bold
+    inactiveBorderColor:
+      - white
+    optionsTextColor:
+      - blue
+    selectedLineBgColor:
+      - blue
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
+  parseEmoji: true

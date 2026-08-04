@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# wall — Nocturne wallpaper + theme control (the one knob).
+#
+#   wall <path>       set a specific wallpaper
+#   wall              pick one with fuzzel
+#   wall --random     pick a random one from the wallpaper dir
+#   wall --next       DMS's next wallpaper in the dir
+#   wall --reload     re-theme from the current wallpaper (no change)
+#
+# Flow: set wallpaper via DMS (regenerates the Material You palette for every
+# DMS-themed app — kitty, gtk, qt, vesktop, firefox …), then render the Nocturne
+# user templates (hypr gradient, nvim base16, fish, btop) from that same palette,
+# then hot-reload the consumers that don't refresh themselves.
+set -euo pipefail
+
+SELF_DIR="$(dirname "$(readlink -f "$0")")"   # so sibling scripts resolve regardless of PATH
+WALLDIR="${WALLPAPER_DIR:-$HOME/Pictures/Wallpapers}"
+FIND=(find -L "$WALLDIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \))
+
+die() { echo "wall: $*" >&2; exit 1; }
+command -v dms >/dev/null || die "dms not found"
+
+case "${1:-}" in
+  -h|--help) sed -n '2,11p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+  --next)    dms ipc call wallpaper next >/dev/null; img="$(dms ipc call wallpaper get 2>/dev/null)" ;;
+  --reload)  img="$(dms ipc call wallpaper get 2>/dev/null)" ;;
+  --random)  img="$("${FIND[@]}" | shuf -n1)" ;;
+  ""|--pick)
+      command -v fuzzel >/dev/null || die "fuzzel not found (needed for the picker)"
+      img="$("${FIND[@]}" | sort | fuzzel --dmenu --prompt='  wallpaper  ' --width=60)" || exit 0
+      ;;
+  *) img="$1" ;;
+esac
+
+[ -n "${img:-}" ] || exit 0
+[ -f "$img" ] || die "not a file: $img"
+img="$(readlink -f "$img")"
+
+# 1. Wallpaper + Material You palette (DMS-themed apps recolor here)
+dms ipc call wallpaper set "$img" >/dev/null
+sleep 0.4
+
+# 2. Nocturne user templates, rendered from the fresh DMS palette
+"$SELF_DIR/nocturne-render"
+
+# 3. Hot-reload consumers that don't auto-refresh
+if command -v hyprctl >/dev/null; then hyprctl reload >/dev/null 2>&1 || true; fi   # border gradient
+pkill -SIGUSR1 kitty 2>/dev/null || true    # kitty re-reads included dank-theme.conf
+# Running nvim instances: :lua Nocturne_reload()  (new instances pick it up automatically)
+
+echo "wall: themed from $(basename "$img")"

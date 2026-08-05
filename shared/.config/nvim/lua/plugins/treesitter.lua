@@ -2,11 +2,12 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master", -- classic API; `main` is the incompatible rewrite (defaults on now)
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSUpdate", "TSInstall", "TSInstallInfo" },
     main = "nvim-treesitter.configs",
-    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+    dependencies = { { "nvim-treesitter/nvim-treesitter-textobjects", branch = "master" } },
     opts = {
       ensure_installed = {
         "bash", "c", "cpp", "css", "diff", "fish", "gitcommit", "gitignore",

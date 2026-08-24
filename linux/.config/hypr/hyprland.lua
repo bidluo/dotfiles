@@ -287,6 +287,13 @@ hl.config({
     misc = {
         force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+
+        -- THE RECOVERY NET. Default is false: if the session-lock client dies
+        -- while holding the lock, Hyprland stays locked forever, painting solid
+        -- black on every output with nothing left to accept a password — only a
+        -- hard reset escapes. That is what ate the session on 2026-08-15.
+        -- true lets a fresh lock client re-attach to the orphaned lock instead.
+        allow_session_lock_restore = true,
     },
 })
 
@@ -451,7 +458,12 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))  -- Cmd+Enter
 hl.bind(wm .. " + Return", hl.dsp.exec_cmd(terminal))       -- Cmd+Ctrl+Enter (kept)
 hl.bind(wm .. " + E",      hl.dsp.exec_cmd(fileManager))
 hl.bind(wm .. " + W",      hl.dsp.exec_cmd("/home/david/.local/bin/wall"))  -- wallpaper picker → recolors everything
-hl.bind(wm .. " + Q",      hl.dsp.exec_cmd("/home/david/.local/bin/lock"))  -- macOS Ctrl+Cmd+Q; field on AOC if present, else all monitors
+-- macOS Ctrl+Cmd+Q. Goes through logind rather than launching a locker directly,
+-- so there is exactly ONE lock client (DMS, via loginctlLockIntegration) and one
+-- canonical path — hypridle's timer, before_sleep, and this bind all emit the
+-- same signal. The old ~/.local/bin/lock spawned hyprlock alongside the DMS lock
+-- and the two raced for ext_session_lock_v1; see hypridle.conf for the fallout.
+hl.bind(wm .. " + Q",      hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(wm .. " + F",      hl.dsp.window.fullscreen({ mode = "maximized" })) -- Ctrl+Cmd+F
 hl.bind(wm .. " + T",      hl.dsp.layout("togglesplit"))
 hl.bind(wm .. " + P",      hl.dsp.window.pseudo())

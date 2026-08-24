@@ -464,10 +464,11 @@ hl.bind(wm .. " + W",      hl.dsp.exec_cmd("/home/david/.local/bin/wall"))  -- w
 -- same signal. The old ~/.local/bin/lock spawned hyprlock alongside the DMS lock
 -- and the two raced for ext_session_lock_v1; see hypridle.conf for the fallout.
 hl.bind(wm .. " + Q",      hl.dsp.exec_cmd("loginctl lock-session"))
-hl.bind(wm .. " + F",      hl.dsp.window.fullscreen({ mode = "maximized" })) -- Ctrl+Cmd+F
-hl.bind(wm .. " + T",      hl.dsp.layout("togglesplit"))
-hl.bind(wm .. " + P",      hl.dsp.window.pseudo())
-hl.bind(wm .. " + SHIFT + F",      hl.dsp.window.float({ action = "toggle" }))
+hl.bind(wm .. " + F",         hl.dsp.window.fullscreen({ mode = "maximized" }))  -- Ctrl+Cmd+F: maximize (keeps bar + gaps)
+hl.bind(wm .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" })) -- Ctrl+Cmd+Shift+F: true edge-to-edge (games)
+hl.bind(wm .. " + T",         hl.dsp.layout("togglesplit"))
+hl.bind(wm .. " + P",         hl.dsp.window.pseudo())
+hl.bind(wm .. " + Space",     hl.dsp.window.float({ action = "toggle" }))         -- float toggle (moved off Shift+F)
 hl.bind(wm .. " + SHIFT + Escape", hl.dsp.exit())
 
 hl.bind(wm .. " + V", hl.dsp.exec_cmd(

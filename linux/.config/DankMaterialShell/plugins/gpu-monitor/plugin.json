@@ -1,0 +1,11 @@
+{
+  "id": "gpuMonitor",
+  "name": "GPU Monitor",
+  "description": "NVIDIA GPU usage and temperature in one pill",
+  "version": "1.0.0",
+  "author": "david",
+  "icon": "auto_awesome_mosaic",
+  "type": "widget",
+  "component": "GpuMonitor.qml",
+  "permissions": ["process"]
+}

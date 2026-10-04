@@ -1,0 +1,10 @@
+{
+  "id": "cpuMonitor",
+  "name": "CPU Monitor",
+  "description": "CPU usage and temperature in one pill",
+  "version": "1.0.0",
+  "author": "david",
+  "icon": "memory",
+  "type": "widget",
+  "component": "CpuMonitor.qml"
+}

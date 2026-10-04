@@ -250,8 +250,8 @@
   "browserPickerViewMode": "grid",
   "browserUsageHistory": {
     "firefox": {
-      "count": 1,
-      "lastUsed": 1785480294159,
+      "count": 10,
+      "lastUsed": 1790236438068,
       "name": "Firefox"
     }
   },
@@ -303,7 +303,7 @@
       "enabled": true
     }
   ],
-  "networkPreference": "auto",
+  "networkPreference": "ethernet",
   "iconThemeDark": "System Default",
   "iconThemeLight": "System Default",
   "iconThemePerMode": false,
@@ -590,8 +590,9 @@
       "rightWidgets": [
         "systemTray",
         "clipboard",
-        "cpuUsage",
+        "cpuMonitor",
         "memUsage",
+        "gpuMonitor",
         "notificationButton",
         "battery",
         "controlCenterButton"

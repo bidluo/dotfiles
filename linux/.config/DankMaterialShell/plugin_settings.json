@@ -1,0 +1,8 @@
+{
+  "cpuMonitor": {
+    "enabled": true
+  },
+  "gpuMonitor": {
+    "enabled": true
+  }
+}

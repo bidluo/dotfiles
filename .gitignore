@@ -23,3 +23,7 @@ shared/.config/fish/conf.d/nocturne-colors.fish
 shared/.config/fish/functions/
 shared/.config/fish/completions/
 shared/.config/fish/conf.d/
+
+# Per-machine state / local backups
+shared/.local/share/fonts/.uuid
+*.bak-*

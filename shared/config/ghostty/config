@@ -1,0 +1,57 @@
+# Ghostty — shared between macOS and Arch.
+# Docs: https://ghostty.org/docs/config/reference   Reload: cmd+shift+,
+
+# --- Look ---------------------------------------------------------------
+# Vesper: near-black, white text, warm peach/mint accents. tmux and the
+# Claude status line use the same palette. Preview others: ghostty +list-themes
+theme = Vesper
+# Vesper's gold selection with dark text, for contrast.
+selection-foreground = #101010
+
+# SF Mono, like Terminal.app. Ghostty's built-in font covers Linux.
+font-family = SF Mono
+font-size = 11
+# SF Mono is widely spaced; tighten it a little.
+adjust-cell-width = -5%
+
+font-thicken = true
+
+# Solid background: the Clear profiles' 95% glass washes text out.
+# For the glass look: background-opacity = 0.95, background-blur = macos-glass-regular
+background-opacity = 1
+
+# Lift colours too close to the background (e.g. dim autosuggestions)
+# to at least this WCAG contrast ratio. 1 = off.
+minimum-contrast = 3
+
+window-padding-x = 14
+window-padding-y = 10
+window-padding-balance = true
+window-padding-color = extend
+
+cursor-style = block
+cursor-style-blink = false
+# Keep the block cursor at the prompt instead of fish integration's bar.
+shell-integration-features = no-cursor
+
+# Animated cursor trail (Ghostty 1.2+ cursor uniforms). Delete to turn off.
+custom-shader = shaders/cursor_warp.glsl
+
+# --- macOS --------------------------------------------------------------
+# tmux does tabs and splits, so keep the window chrome out of the way.
+macos-titlebar-style = transparent
+macos-option-as-alt = left
+macos-icon = xray
+
+# Drop-down terminal from anywhere (needs Accessibility permission).
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+# Quick Claude: sends tmux prefix (C-a) + Q, which opens Claude in a popup.
+keybind = cmd+shift+grave_accent=text:\x01Q
+quick-terminal-position = top
+quick-terminal-size = 45%
+
+# --- Behaviour ----------------------------------------------------------
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+confirm-close-surface = false
+window-save-state = always

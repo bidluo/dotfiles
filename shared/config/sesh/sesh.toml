@@ -1,0 +1,18 @@
+# Pinned sessions for `prefix s` (tmux). Picking one creates it if needed and
+# runs startup_command in it. Any zoxide dir works too; these just get a name
+# and a layout. Docs: https://github.com/joshmedeski/sesh
+
+[[session]]
+name = "dotfiles"
+path = "~/Development/dotfiles"
+startup_command = "claude"
+
+[[session]]
+name = "home-gitops"
+path = "~/Development/Home-GitOps"
+startup_command = "claude"
+windows = ["k9s"]
+
+[[window]]
+name = "k9s"
+startup_script = "k9s"

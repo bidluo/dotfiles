@@ -5,7 +5,8 @@
 # Vesper: near-black, white text, warm peach/mint accents. tmux and the
 # Claude status line use the same palette. Preview others: ghostty +list-themes
 theme = Vesper
-# Vesper's gold selection with dark text, for contrast.
+# Peach selection with dark text, same as tmux's copy-mode highlight.
+selection-background = #ffc799
 selection-foreground = #101010
 
 # SF Mono, like Terminal.app. Ghostty's built-in font covers Linux.

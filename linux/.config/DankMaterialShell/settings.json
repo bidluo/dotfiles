@@ -555,7 +555,7 @@
   "displayNameMode": "system",
   "screenPreferences": {
     "lockScreen": [
-      "DP-1"
+      "all"
     ]
   },
   "showOnLastDisplay": {},
